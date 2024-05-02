@@ -52,7 +52,7 @@
   .modal{
   
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   
     height:500px;
     width: 500px;
