@@ -21,11 +21,22 @@ const Home = () => {
 
      // axios.post('/',{create_username,create_password});
     try{
+      const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      let newDate = new Date()
+      let date = newDate.getDate();
+      let month = monthNames[newDate.getMonth() + 1];
+      let year = newDate.getFullYear();
+      const datestring = `${month} ${date}, ${year}`
+      const publishtime = newDate.getTime();
+      console.log(datestring, publishtime)
+
      const formData = new FormData();
       formData.append("image", file);
       formData.append("name", name);
       formData.append('text',text);
       formData.append('title',title);
+      formData.append('datestring',datestring);
+      formData.append('publishtime',publishtime);
 
       if(file && name && text && title){ await axios.post("http://localhost:4700/blogdata", formData, { headers: {'Content-Type': 'multipart/form-data'}})}
       else{console.log('fill all fields')}

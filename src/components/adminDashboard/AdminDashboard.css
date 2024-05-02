@@ -1,0 +1,117 @@
+.AdminDashboard{
+    display: flex;
+}
+
+.adminNav{
+    min-height: 48px;
+    width: 100%;    
+    position: fixed;
+    top: 0;
+    font-weight: 700;
+    z-index: 10;
+    background-color: white;
+}
+
+.navItems{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+}
+.logo{
+    font-size: 20px;
+}
+.SideBarContainer{
+    position: relative;
+    padding: 16px;
+    margin-top: 60px;
+    height: calc(+100vh-92px);
+    /* height: 100vh; */
+}
+.SideBar{
+   width: 225px;
+   font-size: 14px;
+   transition: width 300ms ease-in-out;
+}
+
+.SideBar.collapse{
+    width: max-content;
+}
+
+.sidebarBtn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 16px 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+.sidebarBtn:hover{
+    background-color: rgb(237, 231, 246);
+    color: rgb(103, 58, 183);
+}
+.sidebarItem{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 16px 10px 16px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    gap: 12px;
+    cursor: pointer;
+}
+.sidebarItem:hover{
+    background-color: rgb(237, 231, 246);
+    color: rgb(103, 58, 183);
+}
+
+.dashboard{
+    margin: 76px 20px 0 0;
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #eef2f6;
+    border-radius: 8px;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dashboard>*{
+}
+
+.dashboardCard{
+    background-color: white;
+    border-radius: 8px;
+    padding: 0 24px 24px;
+    
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px; 
+}
+
+.reCharts{
+    padding-top: 24px;
+    padding-right: 48px;
+}
+
+.sidebarItem>*{
+    margin: 2px 0px;
+}
+
+.blogsTableContainer{    
+    width: 530px;
+}
+
+button{
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: solid 1px rgb(103, 58, 183);
+    background-color: rgb(237, 231, 246);
+    color: rgb(103, 58, 183);
+    cursor: pointer;
+}
+.approveBtn{
+    border: solid 1px rgb(32, 140, 129);
+    background-color: rgba(189, 244, 255, 0.346);
+    color: rgb(32, 140, 129);
+}
