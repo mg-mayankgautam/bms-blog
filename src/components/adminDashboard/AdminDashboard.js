@@ -19,7 +19,7 @@ const AdminDashboard = () => {
     const id= e.target.parentNode.parentNode.getAttribute('data-id')
     try{ const data = await axios.post('http://localhost:4700/approveblog',{id})
       setapprovedBlogs(()=>data.data);
-      
+     
     
     }
       catch(e){console.log(e)}
@@ -133,7 +133,7 @@ const AdminDashboard = () => {
 
       try{ const aprovedblogdata = await axios.get('http://localhost:4700/getapprovedblogs')
       setapprovedBlogs(()=>aprovedblogdata.data);
-      
+      console.log(aprovedblogdata.data)
       
     
     }
