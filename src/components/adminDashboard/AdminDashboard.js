@@ -31,6 +31,14 @@ const AdminDashboard = () => {
     )
   }
 
+  
+
+ const archiveBlogButton = (params) => {
+  return (   
+    <button onClick={(e)=>archiveblog(e)}className='archiveBtn'>archive</button>
+  )
+}
+
   const archiveblog = async(e) =>{
 
      console.log(e.target.parentNode.parentNode.getAttribute('data-id'))
@@ -43,11 +51,23 @@ const AdminDashboard = () => {
       //     catch(e){console.log(e)}
   }
 
-  const archiveBlogButton = (params) => {
+  const deleteBlogButton = (params) => {
     return (   
-      <button onClick={(e)=>archiveblog(e)}className='archiveBtn'>archive</button>
+      <button onClick={(e)=>deleteblog(e)}className='deleteBtn'>delete</button>
     )
   }
+
+  const deleteblog = async(e) =>{
+
+    console.log(e.target.parentNode.parentNode.getAttribute('data-id'))
+     //   const id= e.target.parentNode.parentNode.getAttribute('data-id')
+     //   try{ const data = await axios.post('http://localhost:4700/approveblog',{id})
+     //     setapprovedBlogs(()=>data.data);
+         
+       
+     //   }
+     //     catch(e){console.log(e)}
+ }
   
   
   const columns1 = [
@@ -63,11 +83,18 @@ const AdminDashboard = () => {
       // width: 110
     },
     {
-      field: 'text',
+      field: 'approve',
       headerName: 'Blog Entry',
       type: 'text',
       // width: 100,
       renderCell: approveBlogButton,
+    },
+    {
+      field: 'delete',
+      headerName: 'Blog Entry',
+      type: 'text',
+      // width: 100,
+      renderCell: deleteBlogButton,
     },
     {
       field: 'datestring',
@@ -90,7 +117,7 @@ const AdminDashboard = () => {
       // width: 110,
     },
     {
-      field: 'text',
+      field: 'archive',
       headerName: 'Blog Entry',
       type: 'text',
       // width: 100,
@@ -148,6 +175,7 @@ const AdminDashboard = () => {
   const rows = 
     allblogs&&allblogs.map(blog=>({id:blog._id,name:blog.name, title: blog.title, datestring: new Date(Number(blog.publishtime))}
   ))
+  console.log(allblogs)
 
   const rows2 = 
     approvedBlogs&&approvedBlogs.map(blog=>({id:blog._id,name:blog.name, title: blog.title, datestring: new Date(Number(blog.publishtime))}
