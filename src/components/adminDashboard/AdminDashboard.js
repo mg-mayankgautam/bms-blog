@@ -14,17 +14,28 @@ const AdminDashboard = () => {
   const [approvedBlogs,setapprovedBlogs] = useState([]);
   const [archivedBlogs,setarchivedBlogs] = useState([]);
 
-
   const approveblog = async(e) =>{
 
     //  console.log(e.target.parentNode.parentNode.getAttribute('data-id'))
     const id= e.target.parentNode.parentNode.getAttribute('data-id')
     try{ const data = await axios.post('http://localhost:4700/approveblog',{id})
       setapprovedBlogs(()=>data.data);
-     
+     console.log(data.data)
     
     }
       catch(e){console.log(e)}
+  }
+
+  const previewblog = async(e) =>{
+
+      console.log(e.target.parentNode.parentNode.getAttribute('data-id'))
+    const id= e.target.parentNode.parentNode.getAttribute('data-id')
+    // try{ const data = await axios.post('http://localhost:4700/approveblog',{id})
+    //   setapprovedBlogs(()=>data.data);
+     
+    
+    // }
+    //   catch(e){console.log(e)}
   }
 
   const approveBlogButton = (params) => {
@@ -59,6 +70,17 @@ const AdminDashboard = () => {
     )
   }
 
+  const previewBlogButton = (params) => {
+    return (   
+      <button 
+      onClick={(e)=>previewblog(e)}
+      className='previewBtn'
+      >
+        preview
+      </button>
+    )
+  }
+
   const deleteblog = async(e) =>{
 
     console.log(e.target.parentNode.parentNode.getAttribute('data-id'))
@@ -73,7 +95,10 @@ const AdminDashboard = () => {
 
  const unarchiveBlogButton = (params) => {
   return (   
-    <button onClick={(e)=>unarchiveblog(e)}>unarchive</button>
+    <button 
+    onClick={(e)=>unarchiveblog(e)
+
+    }>unarchive</button>
   )
 }
 
@@ -100,7 +125,7 @@ const unarchiveblog = async(e) =>{
 
 
       try{ const allblogsdata = await axios.get('http://localhost:4700/getblogs')
-      // console.log(allblogsdata)
+      console.log(allblogsdata)
       setallblogs(()=>allblogsdata.data);
       
     
@@ -179,6 +204,13 @@ const unarchiveblog = async(e) =>{
       type: 'text',
       // width: 100,
       renderCell: deleteBlogButton,
+    },
+    {
+      field: 'Preview',
+      headerName: 'Preview',
+      type: 'date',
+      renderCell: previewBlogButton,
+      // width: 80,
     },
     {
       field: 'datestring',

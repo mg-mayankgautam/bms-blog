@@ -132,3 +132,10 @@ button{
     background-color: rgb(255, 175, 175, 0.5);
     color: rgb(139, 0, 0);
 }
+
+.previewBtn{
+    border: solid 1px rgb(139, 0, 0);
+    background-color: rgba(28, 144, 175, 0.5);
+    color: rgb(139, 0, 0);
+
+}

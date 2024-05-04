@@ -99,7 +99,7 @@ const Home = () => {
             {approvedBlogs&&approvedBlogs.map(blog=>(
               <div id={blog._id} className='blog_div'>
                 <div>
-                  <img src={blog.s3name}/>
+                  <img src={blog.url}/>
                 </div>
                 <div className='blogHead'>
                   <h3>{blog.title}</h3> 
