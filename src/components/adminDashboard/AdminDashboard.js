@@ -66,7 +66,13 @@ const AdminDashboard = () => {
 
   const deleteBlogButton = (params) => {
     return (   
-      <button onClick={(e)=>deleteblog(e)}className='deleteBtn'>delete</button>
+      <button onClick={(e)=>deletearchive(e)}className='deleteBtn'>delete</button>
+    )
+  }
+
+  const deleteArchiveButton = (params) => {
+    return (   
+      <button onClick={(e)=>deletearchive(e)}className='deleteBtn'>delee</button>
     )
   }
 
@@ -81,16 +87,16 @@ const AdminDashboard = () => {
     )
   }
 
-  const deleteblog = async(e) =>{
+  const deletearchive = async(e) =>{
 
-    console.log(e.target.parentNode.parentNode.getAttribute('data-id'))
-     //   const id= e.target.parentNode.parentNode.getAttribute('data-id')
-     //   try{ const data = await axios.post('http://localhost:4700/approveblog',{id})
-     //     setapprovedBlogs(()=>data.data);
-         
+    
+       const id= e.target.parentNode.parentNode.getAttribute('data-id')
+       try{ const data = await axios.post('http://localhost:4700/deletearchive',{id})
+       setarchivedBlogs(()=>data.data);
+       console.log(data.data)
        
-     //   }
-     //     catch(e){console.log(e)}
+       }
+         catch(e){console.log(e)}
  }
 
  const unarchiveBlogButton = (params) => {
@@ -272,7 +278,7 @@ const unarchiveblog = async(e) =>{
       headerName: 'Delete',
       type: 'text',
       // width: 100,
-      renderCell: deleteBlogButton,
+      renderCell: deleteArchiveButton,
     },
       {
         field: 'datestring',
