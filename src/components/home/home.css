@@ -6,6 +6,13 @@
     background-position: center;
   }
   
+  .header{
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
   
   .blog_body{
     
@@ -20,20 +27,27 @@
   /* justify-items: center;
   align-items: center; */
   
-  }
-  
-  .header{
-    height: 100px;
-  }
-  
+  } 
   
   
   .blog_div{
-    height: 400px;
-    width: 400px;
-    
-    background-color: rgb(226, 96, 96);
+    height: 300px;
+    flex-grow: 1;
+    flex-basis: 250px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px; 
     border-radius: 20px;
+    padding: 16px;
+    overflow-y: scroll;
+  }
+  .blog_div::-webkit-scrollbar{display: none;}
+
+
+  .blogHead{
+    display: flex;
+    gap: 4px;
+    /* justify-content: center; */
+    align-items: center;
   }
   
   .modal_container{
@@ -42,22 +56,88 @@
     bottom: 0;
     left:0;
     right:0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 15;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+    background-color: rgba(0, 0, 0, 0.402);  
   }
   
   .modal{
-  
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  
+    /* flex-direction: column; */
+    grid-template-rows: 1fr 1fr 1fr 1fr 3fr 1fr 1fr;
     height:500px;
-    width: 500px;
-    background-color: rgb(58, 181, 50);
-  
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 16px 16px 24px;
+    gap: 16px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px; 
+  }
+
+  .modal>div{
+    height: max-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 16px;
+  }
+
+  .modal>div>*{
+    width: 100%;
+  }
+  .modal>div>input{
+    border: none;
+    border-bottom:  solid 1px rgb(103, 58, 183);
+  }
+
+textarea{
+  min-width:364px; max-width:364px;min-height:100px; max-height:114px;
+}
+
+  .submitBlogbtn{
+    color: white;
+    background-color: rgb(103, 58, 183);
+    margin: 16px 0;
+  }
+
+  .fileInputDiv{
+    position: relative;
+  }
+
+  .inputFile{
+    /* color: white; */
+    cursor: pointer;
+    /* opacity: 0; */
+  }
+  .inputFileLabel{
+    background-color: rgb(103, 58, 183);
+    position: absolute;
+    left: 4px;
+    color: white;
+    max-width: 94px;
+    height: 22px;
+    pointer-events: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+  }
+
+  .closeModalDiv{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+  .closeModalbtn{
+    width: 30px !important;
+    border: none;
+    background-color: transparent !important;
+    font-size: 20px;
   }
   
   .switch {
@@ -65,6 +145,7 @@
     display: inline-block;
     width: 60px;
     height: 34px;
+    margin-top: 4px;
   }
   
   .switch input { 
@@ -83,6 +164,7 @@
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
+    /* margin-top: 4px; */
   }
   
   .slider:before {

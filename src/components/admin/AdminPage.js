@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import useAuth from '../../hook/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import './admin.css'
 
 const AdminPage = () => {
 
@@ -68,12 +69,12 @@ const AdminPage = () => {
 
 
   return (
-    <div>
-        this is admin page
+    <div className='adminLogin'>    
 
-        LOGIN CROW
-        <div>
-        <input 
+        <div className='loginForm'>
+            <h3>LOGIN CROW</h3>
+
+            <input 
                 value={Username}
                 onChange={(e)=>{setUsername(e.target.value);}}
                 type='text' 
@@ -86,7 +87,7 @@ const AdminPage = () => {
                 onChange={(e)=>{setPassword(e.target.value);}}
                 type='text' 
                 placeholder='enter_password'></input>
-            <button onClick={()=>submitcredentials()}>submit</button>
+            <button onClick={()=>submitcredentials()} className='submitLogin'>submit</button>
         </div>
 
 

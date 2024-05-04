@@ -1,0 +1,36 @@
+.adminLogin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* align-items: center; */
+    text-align: center;
+    justify-content: center;
+    padding: 16px 16px 32px;
+    background-color: rgb(237, 231, 246);
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px; 
+
+}
+
+input{
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: solid 1px rgb(103, 58, 183);
+    background-color: white;
+    color: rgb(103, 58, 183);
+}
+.submitLogin{
+    padding: 4px 8px;
+    border-radius: 4px;
+    /* border: solid 1px rgb(103, 58, 183); */
+    background-color: rgb(103, 58, 183);
+    color: white;
+    cursor: pointer;
+}
