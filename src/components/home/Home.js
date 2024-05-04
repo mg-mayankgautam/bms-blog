@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import './home.css';
 import blue from './blue.png';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -88,28 +89,48 @@ const Home = () => {
     <div className="home">
       <div className='header'>
         
-        <h3>BMS BLOGS</h3>
+        <div className='homeNav'>
+          <h3>BMS BLOGS</h3>
+        </div>
+        
+        <div>
+          <div className='homeHead'>Our Community Blogs</div>
+          <div className='submitHead'>Submit Your Own Blog!</div>
+          <button onClick={()=>setmodal(!modal)} className='submitBlogbtn'>Click Here</button>
 
-        <button onClick={()=>setmodal(!modal)} className='submitBlogbtn'> submit a blog</button>
-
+        </div>
       </div>
 
-      <div className='blog_body'>
+      <div className='blogs_container'>
 
             {approvedBlogs&&approvedBlogs.map(blog=>(
               <div id={blog._id} className='blog_div'>
-                <div>
-                  <img src={blog.url}/>
+                <div className='blogImgDiv'>
+                  <img src={blog.url} className='blogImg'/>
                 </div>
-                <div className='blogHead'>
-                  <h3>{blog.title}</h3> 
-                  <div>by {blog.name}</div>
-                </div>
-                <div>
-                  {blog.text}
+                <div className='blogBody'>
+                  <div className='blogHead'>
+                    <div className='blogAuthor'>{blog.name} - {blog.datestring}</div>
+                    <div className='blogTitle'>{blog.title}</div> 
+                  </div>
+                  <div className='blogText'>
+                    {blog.text}
+                  </div>
+                  <div className='OpenBlogBtn'>
+                  <Link to={`/blog/${blog._id}`}>
+                    See More
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
+
+            <div className='blog_div'></div>
+            <div className='blog_div'></div>
+            <div className='blog_div'></div>
+            <div className='blog_div'></div>
+            <div className='blog_div'></div>
+            <div className='blog_div'></div>
             
       </div>
 
