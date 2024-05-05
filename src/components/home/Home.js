@@ -176,7 +176,7 @@ const Home = () => {
           
           <div>
               <input type='text' 
-              placeholder='Title'
+              placeholder='Title(less than 50 charachters)'
               onChange={e=>settitle(e.target.value)}
               value={title}
               >
