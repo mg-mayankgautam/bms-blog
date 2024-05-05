@@ -44,6 +44,9 @@ const AdminDashboard = () => {
     )
   }
 
+
+
+  
   
 
  const archiveBlogButton = (params) => {
@@ -66,7 +69,7 @@ const AdminDashboard = () => {
 
   const deleteBlogButton = (params) => {
     return (   
-      <button onClick={(e)=>deletearchive(e)}className='deleteBtn'>delete</button>
+      <button onClick={(e)=>deleteUnapprovedBlog(e)}className='deleteBtn'>delete</button>
     )
   }
 
@@ -99,6 +102,34 @@ const AdminDashboard = () => {
          catch(e){console.log(e)}
  }
 
+//  const unarchiveblog = async(e) =>{
+
+    
+//   const id= e.target.parentNode.parentNode.getAttribute('data-id')
+//   try{ const data = await axios.post('http://localhost:4700/deletearchive',{id})
+//   setarchivedBlogs(()=>data.data);
+//   console.log(data.data)
+  
+//   }
+//     catch(e){console.log(e)}
+// }
+ 
+
+
+ const deleteUnapprovedBlog = async(e) =>{
+
+    
+  const id= e.target.parentNode.parentNode.getAttribute('data-id')
+  try{ const data = await axios.post('http://localhost:4700/deleteunapprovedblog',{id})
+  setallblogs(()=>data.data);
+ // console.log(data.data)
+  
+  }
+    catch(e){console.log(e)}
+}
+
+
+
  const unarchiveBlogButton = (params) => {
   return (   
     <button 
@@ -111,13 +142,13 @@ const AdminDashboard = () => {
 const unarchiveblog = async(e) =>{
 
   console.log(e.target.parentNode.parentNode.getAttribute('data-id'))
-   //   const id= e.target.parentNode.parentNode.getAttribute('data-id')
-   //   try{ const data = await axios.post('http://localhost:4700/approveblog',{id})
-   //     setapprovedBlogs(()=>data.data);
+     const id= e.target.parentNode.parentNode.getAttribute('data-id')
+     try{ const data = await axios.post('http://localhost:4700/unarchiveblog',{id})
+     setarchivedBlogs(()=>data.data);
        
      
-   //   }
-   //     catch(e){console.log(e)}
+     }
+       catch(e){console.log(e)}
 }
   
   
