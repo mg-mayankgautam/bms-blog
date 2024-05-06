@@ -94,12 +94,13 @@ const Home = () => {
         
         <div className='homeNav'>
           <div className='navHead'>BMS BLOGS</div>
+          <div><a href="https://www.blissfulmindsbvcoe.in/" target='_blank'>BMS HOME</a></div>
         </div>
         
         <div>
           <div className='homeHead'>Our Community Blogs</div>
           <div className='submitHead'>Submit Your Own Blog!</div>
-          <button onClick={()=>setmodal(!modal)} className='submitBlogbtn'>Click Here</button>
+          <button onClick={()=>setmodal(!modal)} className='opensubmitBlogbtn'>Click Here</button>
 
         </div>
       </div>
