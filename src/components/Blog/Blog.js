@@ -71,11 +71,14 @@ const Blog = () => {
   return (
     <div className='Blog'>
       <nav className='nav'></nav>
+      
       <div className='blog_main'>
-        <div className='blog_Title'>
+      <div className='blog_Title'>
           {blogtitle}
         </div>
-
+        <div className='blog_Name&date'>
+          name and date
+        </div>
         <div className='main_section'>
               {/* <div className='blogTitle'>
                 {blogtitle}
@@ -97,6 +100,8 @@ const Blog = () => {
                 </div>
 
               </div>
+
+              <hr></hr>
 
               <div className='featured'>
                 featured blogs
