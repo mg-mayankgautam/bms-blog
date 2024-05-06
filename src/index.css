@@ -6,7 +6,23 @@
     src: url(./assets/AvertaDemoPE-Regular.ttf);
 }
 
+@font-face {
+  font-family: headingfont;
+  src: url(./assets/Audrey-Normal.otf);
+}
+
+body{
+  margin: 0;
+}
+
 html, body, .App{
     min-height: 100%;
-    font-family: myfont;
+    font-family: 'montserrat';
+}
+
+:root {
+  --dark-brown: #4d1300; 
+  --light-brown: #7a5137;
+  --beige: #e7dbd3;
+  --white: white;
 }

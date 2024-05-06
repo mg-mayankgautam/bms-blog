@@ -23,10 +23,12 @@ width: 100vw;
 }
 
 .blog_Title{
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: left;
     padding: 0 30px 8px;
     width: 70%;
+    font-family: headingfont;
+    text-transform: uppercase;
 }
 
 .blog_Name_date{

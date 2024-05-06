@@ -1,5 +1,5 @@
 .home{
- background-color: rgb(237, 231, 246);
+ background-color: var(--beige);
  min-height: 200vh;
  max-height: min-content;
  /* font-family: myfont */
@@ -8,16 +8,56 @@
     /* background-size: cover; */
     /* background-position: center; */
   }
+  a{
+    text-decoration: none !important;
+  }
+  a:focus{
+    color: black;
+  }
   
   .header{
-    padding: 8px 16px;
+    padding: 16px 64px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    /* gap: 8px; */
     text-align: center;
+    position: relative;
+    height: 40vh;
     /* background-color: #673ab7; */
+  }
+
+  .headerbgDiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+  }
+  .headerbgDiv>img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+  }
+
+  .header>*>button{
+    background-color: var(--white);
+    color: var(--dark-brown);
+    border: none;
+    font-weight: 500;
+    box-shadow: var(--dark-brown) 0px 2px 10px; 
+  }
+  .header>*>button:hover{
+    box-shadow: none;
+  }
+  .header>*{
+    z-index: 1;
   }
 
   .homeNav{
@@ -25,16 +65,31 @@
     width: 100%;
     height: 64px;
     display: flex;
+    font-weight: 400;
+    z-index: 1;
+    color: var(--white);
   }
+
+  /* .navHead{
+    font-weight: 500;
+  } */
 
   .homeHead{
     font-size: 40px;
     font-weight: 500;
+  font-family: headingfont;
+text-transform: uppercase;
+color: var(--beige);
+text-shadow: 1px 1px 4px var(--dark-brown);
+
   }
 
   .submitHead{
     font-size: 24px;
     font-weight: 300;
+    color: var(--white);
+    text-shadow: 1px 1px 4px var(--dark-brown);
+
   }
   
   .blogs_container{
@@ -58,9 +113,14 @@
     width: 300px;
     /* background-color: rgb(255, 255, 255); */
     /* box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;  */
-    border-radius: 8px;
+    /* border-radius: 8px; */
+    transition: transform 200ms ease-in-out;
   }
   /* .blog_div::-webkit-scrollbar{display: none;} */
+  .blog_div:hover{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; 
+    transform: translateY(-1%);
+  }
 
   .blogImgDiv{
     width: 300px;
@@ -71,8 +131,9 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    /* border-radius: 8px; */
+    /* border-top-left-radius: 8px; */
+    /* border-top-right-radius: 8px; */
   }
 
   .blogBody{
@@ -89,14 +150,15 @@
     /* align-items: center; */
     flex-direction: column;
     margin-bottom: 10px;
+
   }
   .blogHead>*{margin: 0;}
   
   .blogTitle{
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     /* color: rgb(78, 37, 148); */
-    color: #673ab7;
+    color: var(--dark-brown);
   }
 
 .OpenBlogBtn, .blogAuthor{
