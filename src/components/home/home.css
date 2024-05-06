@@ -2,6 +2,7 @@
  background-color: rgb(237, 231, 246);
  min-height: 200vh;
  max-height: min-content;
+ /* font-family: myfont */
     /* background-image: url(./bgg.png); */
     /* background-repeat: no-repeat; */
     /* background-size: cover; */
@@ -53,10 +54,10 @@
   
   
   .blog_div{
-    height: 400px;
+    min-height: 400px;
     width: 300px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; 
+    /* background-color: rgb(255, 255, 255); */
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;  */
     border-radius: 8px;
   }
   /* .blog_div::-webkit-scrollbar{display: none;} */
@@ -75,7 +76,7 @@
   }
 
   .blogBody{
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px; 
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;  */
     padding: 16px;
     /* color: rgb(78, 37, 148); */
     /* color: #673ab7; */

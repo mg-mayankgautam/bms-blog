@@ -70,14 +70,14 @@ const Blog = () => {
 
   return (
     <div className='Blog'>
-      <nav className='nav'></nav>
+      {/* <nav className='nav'></nav>/ */}
       
       <div className='blog_main'>
       <div className='blog_Title'>
           {blogtitle}
         </div>
-        <div className='blog_Name&date'>
-          name and date
+        <div className='blog_Name_date'>
+          {blogauthor} | {blogdate}
         </div>
         <div className='main_section'>
               {/* <div className='blogTitle'>
