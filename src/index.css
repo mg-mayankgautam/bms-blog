@@ -2,14 +2,14 @@
 
 
 @font-face {
-    font-family: myfont;
-    src: url(./assets/AvertaDemoPE-Regular.ttf);
+    font-family: headingfont;
+    src: url(./assets/Kenilla.otf);
 }
 
-@font-face {
+/* @font-face {
   font-family: headingfont;
   src: url(./assets/Audrey-Normal.otf);
-}
+} */
 
 body{
   margin: 0;
@@ -21,8 +21,11 @@ html, body, .App{
 }
 
 :root {
-  --dark-brown: #4d1300; 
-  --light-brown: #7a5137;
-  --beige: #e7dbd3;
+  --dark-brown: #212122; 
+  --light-brown: #5f1462;
+  --light-blue: #CCE6F2;
+  --light-pink: #FBDDE2;
+  --beige: #f5eaf6;
   --white: white;
+  --background: #f8f7f4;
 }

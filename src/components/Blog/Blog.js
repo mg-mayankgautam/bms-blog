@@ -3,6 +3,8 @@ import './Blog.css'
 import axios from 'axios'; 
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
 
 
 const Blog = () => {
@@ -70,7 +72,7 @@ const Blog = () => {
 
   return (
     <div className='Blog'>
-      {/* <nav className='nav'></nav>/ */}
+      <Nav/>
       
       <div className='blog_main'>
       <div className='blog_Title'>
@@ -130,6 +132,8 @@ const Blog = () => {
               </div>
         </div>
       </div>
+
+      <Footer/>
     </div>
   )
 }

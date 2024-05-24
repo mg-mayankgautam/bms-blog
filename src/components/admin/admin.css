@@ -19,7 +19,7 @@
 
 }
 
-input{
+.loginInput{
     padding: 4px 8px;
     border-radius: 4px;
     border: solid 1px rgb(103, 58, 183);

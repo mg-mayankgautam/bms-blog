@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import './home.css';
-import blue from './blue.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import headerbg from '../../assets/janko-ferlic-sfL_QOnmy00-unsplash.jpg'
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
+import Featured from '../Featured/Featured';
 
 
 const Home = () => {
@@ -88,54 +89,49 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div className='header'>
+      
+      <Nav setmodal={setmodal} modal={modal}/>
 
-        <div className='headerbgDiv'><img src={headerbg}/></div>
-        
-        <div className='homeNav'>
-          <div className='navHead'>BMS BLOGS</div>
-          <div><a href="https://www.blissfulmindsbvcoe.in/" target='_blank'>BMS HOME</a></div>
-        </div>
-        
-        <div>
-          <div className='homeHead'>Our Community Blogs</div>
-          <div className='submitHead'>Submit Your Own Blog!</div>
-          <button onClick={()=>setmodal(!modal)} className='opensubmitBlogbtn'>Click Here</button>
+      <Featured/>
 
-        </div>
-      </div>
 
-      <div className='blogs_container'>
+      <div className='blogs_container_div'>
+      
+        <div className='subHomeHead'>Explore All Blogs!</div>
 
-            {approvedBlogs&&approvedBlogs.map(blog=>(
-              <Link to={`/blog/${blog._id}`}>
-              <div id={blog._id} className='blog_div'>
-                <div className='blogImgDiv'>
-                  <img src={blog.url} className='blogImg'/>
-                </div>
-                <div className='blogBody'>
-                  <div className='blogHead'>
-                    <div className='blogAuthor'>{blog.name} - {blog.datestring}</div>
-                    <div className='blogTitle'>{blog.title}</div> 
+        <div className='blogs_container'>
+
+              {approvedBlogs&&approvedBlogs.map(blog=>(
+                <Link to={`/blog/${blog._id}`}>
+                <div id={blog._id} className='blog_div'>
+                  <div className='blogImgDiv'>
+                    <img src={blog.url} className='blogImg'/>
                   </div>
-                  <div className='blogText'>
-                    {blog.text}
-                  </div>
-                  <div className='OpenBlogBtn'>
-                    See More
+                  <div className='blogBody'>
+                    <div className='blogHead'>
+                      <div className='blogAuthor'>{blog.name} - {blog.datestring}</div>
+                      <div className='blogTitle'>{blog.title}</div> 
+                    </div>
+                    <div className='blogText'>
+                      {blog.text}
+                    </div>
+                    <div className='OpenBlogBtn'>
+                      See More
+                    </div>
                   </div>
                 </div>
-              </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
 
-            <div className='blog_div'></div>
-            <div className='blog_div'></div>
-            <div className='blog_div'></div>
-            <div className='blog_div'></div>
-            <div className='blog_div'></div>
-            <div className='blog_div'></div>
-            
+              <div className='blog_div'></div>
+              <div className='blog_div'></div>
+              <div className='blog_div'></div>
+              <div className='blog_div'></div>
+              <div className='blog_div'></div>
+              <div className='blog_div'></div>
+              
+        </div>
+
       </div>
 
 
@@ -216,6 +212,8 @@ const Home = () => {
 
         </div>
       </div> :<></>}
+
+      <Footer/>
 
   </div>
   )

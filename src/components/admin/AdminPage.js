@@ -78,7 +78,8 @@ const AdminPage = () => {
                 value={Username}
                 onChange={(e)=>{setUsername(e.target.value);}}
                 type='text' 
-                placeholder='enter_username'>
+                placeholder='enter_username'
+                className='loginInput'>
 
             </input>
             
@@ -86,7 +87,7 @@ const AdminPage = () => {
                 value={Password}
                 onChange={(e)=>{setPassword(e.target.value);}}
                 type='text' 
-                placeholder='enter_password'></input>
+                placeholder='enter_password' className='loginInput'></input>
             <button onClick={()=>submitcredentials()} className='submitLogin'>submit</button>
         </div>
 

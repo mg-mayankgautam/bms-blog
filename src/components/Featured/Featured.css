@@ -1,0 +1,117 @@
+.Featured{
+    border-radius: 24px;
+    /* background-color: var(--light-blue); */
+    padding: 24px 32px 32px;
+    margin: 16px 32px 32px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 24px;
+}
+
+.featured_container1{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto;
+    /* justify-content: center; */
+    /* overflow-x: scroll; */
+}
+
+/* .featured_container::-webkit-scrollbar{display: none;} */
+
+.featuredHead{
+  display: flex;
+  align-self: self-start;
+  align-items: last baseline;
+  gap: 16px;
+}
+
+.f_blog_div{
+    height: 300px;
+    min-width: 300px;
+    width: 300px;
+    background-color: var(--white);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 2px; 
+    border-radius: 24px;
+    transition: transform 200ms ease-in-out;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    position: relative;
+  }
+
+  .f_blog_div:hover{
+    transform: translateY(-1%);
+  }
+
+  .f_blogImgDiv{
+    min-width: 150px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .f_blogImg{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    /* border-radius: 24px; */
+    /* margin: 8px; */
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+  }
+
+  .f_blogBody{
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 10px;  */
+    padding: 16px;
+    /* color: rgb(78, 37, 148); */
+    /* color: #673ab7; */
+  }
+
+  .f_blogHead{
+    display: flex;
+    /* gap: 4px; */
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .f_blogHead>*{margin: 0;}
+  
+  .f_blogTitle{
+    font-size: 20px;
+    font-weight: 500;
+    /* color: rgb(78, 37, 148); */
+    color: var(--dark-brown);
+    font-family: headingfont;
+    letter-spacing: 0.5px;
+    max-height: 45px;
+    min-height: 45px;
+    overflow-y: hidden;
+  }
+
+  .f_blogText{
+  max-height: 39px;
+  min-height: 39px;
+  overflow-y: hidden;
+  font-weight: 400;
+  /* color: rgb(78, 37, 148); */
+  color: #3b3546;
+  font-size: 15px;
+}
+
+.f_OpenBlogBtn, .f_blogAuthor{
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--light-brown);
+  }
+  .f_OpenBlogBtn{
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .f_OpenBlogBtn:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
